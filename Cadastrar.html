@@ -12,7 +12,7 @@
 
 <body>
 
-<!-- Barra superior -->
+
 <div class="top-bar">
     <div class="top-container">
 
@@ -29,7 +29,7 @@
     </div>
     </div>
 
-<!-- Cabeçalho -->
+
 <header class="header">
     <div class="header-container">
 
@@ -50,7 +50,6 @@
     </div>
 </header>
 
-<!-- Menu -->
 <div class="menu-container">
     <nav id="menu">
 
@@ -93,7 +92,6 @@
 
     <div class="user-data">
 
-        <!-- Abas Entrar / Cadastrar -->
         <div class="tabs">
             <button type="button" class="tab" onclick="window.location.href='Login.html'">Entrar</button>
             <button type="button" class="tab active" onclick="window.location.href='Cadastrar.html'">Cadastrar</button>
@@ -102,7 +100,6 @@
         <h2>Criar conta</h2>
         <p>Escolha o tipo de conta e comece agora.</p>
 
-        <!-- Escolha do tipo de conta -->
         <div class="tipos-conta" role="radiogroup" aria-label="Tipo de conta">
 
             <button type="button" class="tipo-conta active" data-tipo="viajante" role="radio" aria-checked="true">
@@ -128,7 +125,6 @@
 
         </div>
 
-        <!-- Nome (vira "Nome da Empresa" quando for agência) -->
         <div>
             <label class="rotulo" for="nome" id="rotulo-nome">Nome</label>
             <input type="text" id="nome" placeholder="Digite o seu nome completo">
@@ -136,23 +132,21 @@
 
         <div>
             <label class="rotulo" for="email">E-mail</label>
-            <input type="email" id="email" placeholder="Digite o seu e-mail" autocomplete="email">
+            <input type="email" id="email" placeholder="Digite o seu e-mail">
         </div>
 
         <div>
             <label class="rotulo" for="senha">Senha</label>
             <div class="campo-senha">
-                <input type="password" id="senha" placeholder="Mínimo de 6 caracteres" autocomplete="new-password" minlength="6">
+                <input type="password" id="senha" placeholder="Digite a sua senha">
                 <button type="button" id="toggle-senha" aria-label="Mostrar senha">
                     <img src="assets/olho-fechado.png" id="icone-olho" alt="">
                 </button>
             </div>
         </div>
 
-        <p class="mensagem-erro" id="mensagem-erro" role="alert" hidden></p>
-
         <div class="but-entrar">
-            <button type="button" id="btn-cadastrar">Criar conta</button>
+            <button type="button" onclick="window.location.href='Home.html'">Criar conta</button>
         </div>
 
         <div class="divider">
@@ -162,11 +156,13 @@
         </div>
 
         <div class="but-google">
-            <!-- O botão do Google é desenhado aqui pelo Cadastrar.js -->
-            <div id="googleButton"></div>
+            <button type="button">
+                <img src="assets/Google.png" alt="">
+                Continuar com o Google
+            </button>
         </div>
 
-        <!-- Aparece só quando "Agência" estiver selecionada -->
+
         <p class="nota-agencia" id="nota-agencia" hidden>
             Contas de agência passam por aprovação do time Turismo sem Barreiras antes de publicar pacotes.
         </p>
@@ -177,11 +173,8 @@
 
 <section class="principal"></section>
 
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-<script src="javaScript/api.js"></script>
 <script src="javaScript/Cadastrar.js"></script>
 <script src="javaScript/vlibras.js"></script>
 <script src="javaScript/acessibilidade.js"></script>
-<script src="javaScript/sessao.js"></script>
 </body>
 </html>

@@ -1,5 +1,4 @@
-/* Troca "Entrar ou cadastrar" por "Olá, Nome" + botão Sair quando está logado.
-   Depende de api.js (carregue api.js antes). */
+
 (function () {
     const botao = document.querySelector('.btn-login');
     const usuario = obterUsuario();
@@ -8,7 +7,7 @@
 
     const primeiroNome = (usuario.nome || '').split(' ')[0];
 
-    // "Olá, Nome" (mantém o ícone de perfil)
+    
     const icone = botao.querySelector('img');
     botao.textContent = '';
     if (icone) botao.appendChild(icone);
@@ -25,7 +24,7 @@
         sair();
     });
 
-    // Coloca os dois lado a lado
+   
     const grupo = document.createElement('div');
     grupo.style.display = 'flex';
     grupo.style.gap = '10px';

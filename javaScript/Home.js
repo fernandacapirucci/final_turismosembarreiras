@@ -1,15 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ==================================================
-       ELEMENTOS DA PÁGINA
-    ================================================== */
-
     const campoDestino = document.getElementById("destino");
     const campoData = document.getElementById("data");
 
     const selects = document.querySelectorAll(".input-box select");
 
-    // selects[0] é o destino, por isso os outros começam do 1
     const campoViajantes = selects[1];
     const campoNecessidade = selects[2];
 
@@ -18,11 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const cardsDestinos = document.querySelectorAll(".destinos-grid .card");
 
     const botaoChat = document.querySelector(".but-touch");
-
-
-    /* ==================================================
-       BUSCA PRINCIPAL
-    ================================================== */
 
     if (botaoBuscar) {
 
@@ -33,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const viajantes = campoViajantes ? campoViajantes.value : "";
             const necessidade = campoNecessidade ? campoNecessidade.value : "";
 
-            /* Verifica se o destino foi escolhido */
 
             if (destino === "") {
 
@@ -46,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            /* Verifica a data */
 
             if (campoData && campoData.value !== "") {
 
@@ -65,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
-            /* Guarda os dados da busca para a página de Pacotes */
 
             const pesquisa = {
                 destino: destino,
@@ -80,10 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-
-    /* ==================================================
-       BOTÕES "VER PACOTES"
-    ================================================== */
 
     cardsDestinos.forEach(function (card) {
 
@@ -104,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let destino = titulo.textContent.trim();
 
-            // o card se chama "Gramado & Canela", mas o destino é "Gramado"
             if (destino === "Gramado & Canela") {
                 destino = "Gramado";
             }
@@ -124,10 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* ==================================================
-       MENU
-    ================================================== */
-
     const linksMenu = document.querySelectorAll("#menu a");
 
     linksMenu.forEach(function (link) {
@@ -144,10 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
-    /* ==================================================
-       ROLAGEM SUAVE
-    ================================================== */
 
     const linksInternos = document.querySelectorAll('a[href^="#"]');
 
@@ -179,10 +153,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* ==================================================
-       CHAT
-    ================================================== */
-
     if (botaoChat) {
 
         botaoChat.addEventListener("click", function () {
@@ -194,7 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function abrirChat() {
 
-        /* Se o chat já estiver aberto, fecha */
 
         const chatExistente = document.querySelector(".janela-chat");
 
@@ -239,7 +208,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.appendChild(janela);
 
-        /* Botão fechar */
 
         const fechar = janela.querySelector(".fechar-chat");
 
@@ -253,7 +221,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-        /* Opções do chat */
 
         const opcoes = janela.querySelectorAll(".opcao-chat");
 
@@ -265,7 +232,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-        /* Fecha com ESC */
 
         function fecharComEsc(event) {
 
@@ -286,11 +252,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.addEventListener("keydown", fecharComEsc);
 
     }
-
-
-    /* ==================================================
-       MENSAGEM NA TELA
-    ================================================== */
 
     function mostrarMensagem(texto) {
 
@@ -315,17 +276,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ==================================================
-       ACESSIBILIDADE DOS CARDS
-    ================================================== */
-
     cardsDestinos.forEach(function (card) {
 
         card.setAttribute("tabindex", "0");
 
         card.addEventListener("keydown", function (event) {
 
-            // só age se o foco estiver no card, não no botão dentro dele
             if (event.target !== card) {
                 return;
             }
@@ -347,10 +303,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* ==================================================
-       DATA MÍNIMA
-    ================================================== */
-
     if (campoData) {
 
         const hoje = new Date();
@@ -363,11 +315,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-
-    /* ==================================================
-       ANIMAÇÃO DOS ELEMENTOS AO ENTRAR NA TELA
-    ================================================== */
 
     const elementosAnimados = document.querySelectorAll(
         ".card, .passos-grid > div, .agencia-section"

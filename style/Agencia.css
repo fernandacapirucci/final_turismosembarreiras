@@ -1,4 +1,4 @@
-/* Configurações gerais */
+
 
 * {
     margin: 0;
@@ -34,7 +34,6 @@ select {
     outline-offset: 3px;
 }
 
-/* Foco */
 
 a:focus-visible,
 button:focus-visible,
@@ -91,11 +90,6 @@ summary:focus-visible {
     color: #007f82;
     text-decoration: underline;
 }
-
-
-/* ==================================================
-   BARRA SUPERIOR
-================================================== */
 
 .top-bar {
     min-height: 42px;
@@ -159,10 +153,6 @@ summary:focus-visible {
     text-decoration: underline;
 }
 
-
-/* ==================================================
-   CABEÇALHO
-================================================== */
 
 .header {
     background: white;
@@ -249,10 +239,6 @@ summary:focus-visible {
 }
 
 
-/* ==================================================
-   MENU
-================================================== */
-
 .menu-container {
     background: white;
 
@@ -317,9 +303,6 @@ summary:focus-visible {
     border-bottom-color: #008f92;
 }
 
-/* ==================================================
-   CONTEÚDO
-================================================== */
 
 .conteudo-ajuda {
     position: relative;
@@ -357,10 +340,6 @@ summary:focus-visible {
 }
 
 
-/* ==================================================
-   CABEÇALHO DA AJUDA
-================================================== */
-
 .cabecalho-ajuda {
     text-align: center;
 
@@ -387,10 +366,6 @@ summary:focus-visible {
     line-height: 1.6;
 }
 
-
-/* ==================================================
-   CONTATOS
-================================================== */
 
 .contatos {
     margin-bottom: 55px;
@@ -519,7 +494,6 @@ button.botao-contato {
 }
 
 
-/* Dúvidas Frequentes */
 
 .duvidas {
     max-width: 850px;
@@ -580,8 +554,6 @@ button.botao-contato {
 }
 
 
-/* ================= Botão flutuante ================= */
-
 .but-touch {
     position: fixed;
 
@@ -620,8 +592,6 @@ button.botao-contato {
     height: 31px;
 }
 
-
-/* Rodapé */
 
 footer {
     background: #0c0636;
@@ -686,8 +656,6 @@ footer {
 }
 
 
-
-/* Responsividade */
 
 @media (max-width: 800px) {
 

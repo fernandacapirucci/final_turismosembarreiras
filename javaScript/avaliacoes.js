@@ -32,8 +32,6 @@
   atualizarResumo();
   atualizarBotaoVerTodas();
 
-  /* ---------- eventos ---------- */
-
   btnAbrir.addEventListener('click', function () {
     var abrir = form.hidden;
     form.hidden = !abrir;
@@ -46,7 +44,6 @@
 
   btnCancelar.addEventListener('click', fecharForm);
 
-  // apagar: só existe botão nas avaliações criadas neste navegador (as do próprio usuário)
   lista.addEventListener('click', function (e) {
     var btn = e.target.closest('.av__apagar');
     if (!btn) return;
@@ -117,8 +114,6 @@
     setTimeout(function () { elStatus.textContent = ''; }, 5000);
     item.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
-
-  /* ---------- funções ---------- */
 
   function criarItem(a, nova) {
     var art = document.createElement('article');
@@ -223,6 +218,6 @@
 
   function salvar() {
     try { localStorage.setItem(CHAVE, JSON.stringify(novas)); }
-    catch (e) { /* sem armazenamento: a avaliação fica só até recarregar a página */ }
+    catch (e) {  }
   }
 })();

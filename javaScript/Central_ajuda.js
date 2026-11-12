@@ -1,34 +1,16 @@
-/*
-====================================================
-TURISMO SEM BARREIRAS
-JavaScript - Central de Ajuda
-====================================================
-*/
-
 document.addEventListener("DOMContentLoaded", function () {
-
-
-    /* ==================================================
-       BOTÃO FLUTUANTE DE ATENDIMENTO
-    ================================================== */
-
     const botaoAtendimento =
         document.querySelector(".but-touch");
 
 
     const botaoOpcoes =
         document.querySelector(".botao-atendimento");
-
-
     if (botaoAtendimento) {
-
         botaoAtendimento.addEventListener(
             "click",
             abrirAtendimento
         );
-
     }
-
 
     if (botaoOpcoes) {
 
@@ -39,53 +21,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    /* ==================================================
-       FUNÇÃO DE ATENDIMENTO
-    ================================================== */
-
     function abrirAtendimento() {
 
         const modalExistente =
             document.querySelector(
                 ".modal-atendimento"
             );
-
-
         if (modalExistente) {
-
             fecharModal(modalExistente);
-
             return;
-
         }
-
 
         const modal =
             document.createElement("div");
 
-
         modal.className =
             "modal-atendimento";
-
 
         modal.setAttribute(
             "role",
             "dialog"
         );
 
-
         modal.setAttribute(
             "aria-modal",
             "true"
         );
 
-
         modal.setAttribute(
             "aria-labelledby",
             "titulo-atendimento"
         );
-
 
         modal.innerHTML = `
 
@@ -177,11 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.appendChild(modal);
 
-
-        /* ==================================================
-           BOTÃO FECHAR
-        ================================================== */
-
         const botaoFechar =
             modal.querySelector(
                 ".fechar-atendimento"
@@ -196,11 +157,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
         );
-
-
-        /* ==================================================
-           COPIAR E-MAIL
-        ================================================== */
 
         const botaoCopiar =
             modal.querySelector(
@@ -244,11 +200,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         );
 
-
-        /* ==================================================
-           CLICAR FORA DO MODAL
-        ================================================== */
-
         modal.addEventListener(
             "click",
             function (event) {
@@ -263,11 +214,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
         );
-
-
-        /* ==================================================
-           ESC FECHA O MODAL
-        ================================================== */
 
         function escParaFechar(event) {
 
@@ -287,17 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
             escParaFechar
         );
 
-
-        /* ==================================================
-           FOCO
-        ================================================== */
-
         botaoFechar.focus();
-
-
-        /* ==================================================
-           FUNÇÃO FECHAR
-        ================================================== */
 
         function fecharModal(elemento) {
 
@@ -317,11 +253,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     }
-
-
-    /* ==================================================
-       ACESSIBILIDADE DOS LINKS DO MENU
-    ================================================== */
 
     const linksMenu =
         document.querySelectorAll(
@@ -350,10 +281,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
-
-    /* ==================================================
-       ROLAGEM SUAVE
-    ================================================== */
 
     const linksInternos =
         document.querySelectorAll(
@@ -407,11 +334,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
-
-    /* ==================================================
-       ANIMAÇÃO DOS CARDS
-    ================================================== */
-
     const cards =
         document.querySelectorAll(
             ".contato-card"
@@ -464,11 +386,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
-
-
-    /* ==================================================
-       TECLA ESC NAS DÚVIDAS
-    ================================================== */
 
     const duvidas =
         document.querySelectorAll(

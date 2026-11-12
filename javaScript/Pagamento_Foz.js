@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const PRECO_POR_PESSOA = 1590;
@@ -19,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
         'input[name="metodo"]'
     );
 
-    // RECEBER DATA DA PÁGINA DO DESTINO
 
     const parametrosURL = new URLSearchParams(
         window.location.search
@@ -41,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // FORMATAR PREÇO
 
     function formatarPreco(valor) {
 
@@ -51,8 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
-
-    // ATUALIZAR RESUMO
 
     function atualizarResumo() {
 
@@ -71,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // ATUALIZAR FORMA DE PAGAMENTO
 
     function atualizarFormaPagamento() {
 
@@ -108,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // ENVIAR FORMULÁRIO
 
     formulario.addEventListener("submit", function (evento) {
 
@@ -129,7 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    // EVENTOS
 
     campoViajantes.addEventListener(
         "change",
@@ -150,7 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    // INICIALIZAÇÃO
 
     atualizarResumo();
     atualizarFormaPagamento();

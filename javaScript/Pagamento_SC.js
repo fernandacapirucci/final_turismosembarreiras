@@ -1,10 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ==========================================
-    // ELEMENTOS DA PÁGINA
-    // ==========================================
-
     const PRECO_POR_PESSOA = 1690;
 
     const formulario = document.getElementById("form-pagamento");
@@ -22,10 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const opcoesPagamento = document.querySelectorAll(
         'input[name="metodo"]'
     );
-
-    // ==========================================
-    // RECEBER DATA ENVIADA PELO SC.HTML
-    // ==========================================
 
     const parametrosURL = new URLSearchParams(
         window.location.search
@@ -51,10 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // ==========================================
-    // FORMATAR VALOR EM REAIS
-    // ==========================================
-
     function formatarPreco(valor) {
 
         return valor.toLocaleString("pt-BR", {
@@ -64,9 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // ==========================================
-    // ATUALIZAR RESUMO DA VIAGEM
-    // ==========================================
 
     function atualizarResumo() {
 
@@ -85,9 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // ==========================================
-    // ATUALIZAR FORMA DE PAGAMENTO
-    // ==========================================
 
     function atualizarFormaPagamento() {
 
@@ -126,9 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // ==========================================
-    // CONTINUAR PARA PAGAMENTO
-    // ==========================================
 
     formulario.addEventListener("submit", function (evento) {
 
@@ -151,9 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    // ==========================================
-    // EVENTOS
-    // ==========================================
 
     campoViajantes.addEventListener(
         "change",
@@ -173,10 +149,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     });
-
-    // ==========================================
-    // INICIALIZAÇÃO
-    // ==========================================
 
     atualizarResumo();
     atualizarFormaPagamento();

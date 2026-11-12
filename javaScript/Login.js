@@ -1,63 +1,103 @@
-/* ==================================================
-   LOGIN (e-mail/senha e Google)
-   Depende de api.js
-================================================== */
+const GOOGLE_CLIENT_ID =
+    "72671285332-knhpone20v8jbflb5fnfjnnp0efcmfun.apps.googleusercontent.com";
 
-const campoEmail = document.getElementById('email');
-const campoSenha = document.getElementById('senha');
-const botaoEntrar = document.getElementById('btn-entrar');
+window.onload = function () {
 
-configurarOlhoSenha();
+    google.accounts.id.initialize({
 
-// Se já está logado, não precisa ver o login de novo
-if (obterToken()) {
-    window.location.href = 'Home.html';
-}
+        client_id: GOOGLE_CLIENT_ID,
 
-async function entrar() {
-    mostrarErro('');
+        callback: receberRespostaGoogle
 
-    const email = campoEmail.value.trim();
-    const senha = campoSenha.value;
-
-    if (!email || !senha) {
-        mostrarErro('Preencha o e-mail e a senha.');
-        return;
-    }
-
-    botaoEntrar.disabled = true;
-    try {
-        const dados = await api('/auth/login', {
-            method: 'POST',
-            body: JSON.stringify({ email, senha })
-        });
-        salvarSessao(dados);
-        window.location.href = 'Home.html';
-    } catch (erro) {
-        mostrarErro(erro.message);
-    } finally {
-        botaoEntrar.disabled = false;
-    }
-}
-
-botaoEntrar.addEventListener('click', entrar);
-[campoEmail, campoSenha].forEach(function (campo) {
-    campo.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') entrar();
     });
-});
 
-// Login com Google
-configurarBotaoGoogle(async function (idToken) {
-    mostrarErro('');
+
+    google.accounts.id.renderButton(
+
+        document.getElementById("googleButton"),
+
+        {
+            theme: "outline",
+            size: "large",
+            width: 300,
+            text: "continue_with",
+            shape: "pill"
+        }
+
+    );
+
+};
+
+async function receberRespostaGoogle(response) {
+
+    console.log("Token recebido do Google:", response.credential);
+
     try {
-        const dados = await api('/auth/google', {
-            method: 'POST',
-            body: JSON.stringify({ idToken })
-        });
-        salvarSessao(dados);
-        window.location.href = 'Home.html';
+
+        const resposta = await fetch(
+            "http://localhost:8080/auth/google",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    idToken: response.credential
+                })
+            }
+        );
+
+
+        const dados = await resposta.json();
+
+
+        if (!resposta.ok) {
+
+            alert(
+                dados.message ||
+                dados.mensagem ||
+                "Não foi possível entrar com o Google."
+            );
+
+            return;
+        }
+
+        console.log("Usuário logado:", dados);
+
+        localStorage.setItem(
+            "usuario",
+            JSON.stringify(dados)
+        );
+
+
+        alert("Login realizado com sucesso!");
+
+        window.location.href = "Home.html";
+
+
     } catch (erro) {
-        mostrarErro(erro.message);
+
+        console.error("Erro ao conectar com o backend:", erro);
+
+        alert(
+            "Não foi possível conectar ao servidor. Verifique se o backend está funcionando."
+        );
+
     }
+
+}
+
+const inputSenha = document.getElementById('senha');
+const botaoToggle = document.getElementById('toggle-senha');
+const iconeOlho = document.getElementById('icone-olho');
+
+botaoToggle.addEventListener('click', () => {
+    const estaOculta = inputSenha.type === 'password';
+
+    inputSenha.type = estaOculta ? 'text' : 'password';
+    botaoToggle.setAttribute('aria-label', estaOculta ? 'Ocultar senha' : 'Mostrar senha');
+
+    iconeOlho.src = estaOculta ? 'assets/olho.png' : 'assets/olho-fechado.png';
 });

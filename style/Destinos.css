@@ -1,12 +1,3 @@
-/* ==================================================
-   CONFIGURAÇÕES GERAIS
-================================================== */
-
-
-/* ==================================================
-   BARRA SUPERIOR
-================================================== */
-
 .top-bar {
     min-height: 42px;
 
@@ -70,9 +61,7 @@
 }
 
 
-/* ==================================================
-   CABEÇALHO
-================================================== */
+
 
 .header {
     background: white;
@@ -159,9 +148,7 @@
 }
 
 
-/* ==================================================
-   MENU
-================================================== */
+
 
 .menu-container {
     background: white;
@@ -272,7 +259,7 @@ ul {
     list-style: none;
 }
 
-/* Ícones SVG (sprite) */
+
 .ic {
     width: 18px;
     height: 18px;
@@ -284,7 +271,7 @@ ul {
     stroke-linejoin: round;
 }
 
-/* Foco visível */
+
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
@@ -294,9 +281,7 @@ input:focus-visible + .data-icone {
 }
 
 
-/* ==================================================
-   CABEÇALHO
-================================================== */
+
 
 .header {
     background: white;
@@ -405,9 +390,7 @@ input:focus-visible + .data-icone {
 }
 
 
-/* ==================================================
-   ESTRUTURA DA PÁGINA
-================================================== */
+
 
 .pagina {
     width: 94%;
@@ -431,9 +414,7 @@ input:focus-visible + .data-icone {
 }
 
 
-/* ==================================================
-   TOPO: INFORMAÇÕES + GALERIA + RESERVA
-================================================== */
+
 
 .destino-topo {
     display: grid;
@@ -479,7 +460,7 @@ input:focus-visible + .data-icone {
     margin: 2px 0 14px;
 }
 
-/* Galeria */
+
 
 .galeria {
     display: grid;
@@ -553,7 +534,7 @@ input:focus-visible + .data-icone {
 
 .galeria-mini-lado {
     flex-direction: column;
-    height: 330px;           /* mesma altura da foto principal */
+    height: 330px;          
 }
 
 .galeria-mini-lado .mini {
@@ -562,7 +543,7 @@ input:focus-visible + .data-icone {
 }
 
 .galeria-mini-baixo {
-    grid-column: 1 / -1;     /* ocupa toda a largura, embaixo da foto principal */
+    grid-column: 1 / -1;    
 }
 
 .galeria-mini-baixo .mini {
@@ -601,7 +582,7 @@ input:focus-visible + .data-icone {
     border-color: #1e9e57;
 }
 
-/* Caixa de reserva */
+
 
 .reserva {
     padding: 20px;
@@ -756,9 +737,7 @@ input:focus-visible + .data-icone {
 }
 
 
-/* ==================================================
-   NÍVEL DE ACESSIBILIDADE
-================================================== */
+
 
 .nivel {
     margin-top: 22px;
@@ -840,9 +819,7 @@ input:focus-visible + .data-icone {
 }
 
 
-/* ==================================================
-   FOTOS DO PASSEIO
-================================================== */
+
 
 .fotos {
     margin-top: 28px;
@@ -938,9 +915,7 @@ input:focus-visible + .data-icone {
 }
 
 
-/* ==================================================
-   GUIA COMPLETO
-================================================== */
+
 
 .guia {
     position: relative;
@@ -1048,9 +1023,7 @@ input:focus-visible + .data-icone {
 .acao-icone.verde { background: #1e9e57; }
 
 
-/* ==================================================
-   ROTEIRO DIA A DIA
-================================================== */
+
 
 .roteiro {
     margin-top: 26px;
@@ -1124,9 +1097,7 @@ input:focus-visible + .data-icone {
 }
 
 
-/* ==================================================
-   INCLUSO / NÃO INCLUSO
-================================================== */
+
 
 .inclusos {
     margin-top: 24px;
@@ -1186,9 +1157,7 @@ input:focus-visible + .data-icone {
 .nao-incluso li .ic { color: var(--vermelho); width: 15px; height: 15px; }
 
 
-/* ==================================================
-   RESERVA FINAL
-================================================== */
+
 
 .reserva-final {
     margin-top: 30px;
@@ -1203,9 +1172,7 @@ input:focus-visible + .data-icone {
 }
 
 
-/* ==================================================
-   RODAPÉ (ONDA + SLOGAN)
-================================================== */
+
 
 .rodape {
     position: relative;
@@ -1240,9 +1207,7 @@ input:focus-visible + .data-icone {
 .onda-verde { fill: #1e9e57; }
 
 
-/* ==================================================
-   RESPONSIVIDADE
-================================================== */
+
 
 @media (max-width: 1000px) {
 
@@ -1373,7 +1338,7 @@ input:focus-visible + .data-icone {
     cursor: pointer;
 }
 
-/* ================= POLÍTICAS (cancelamento e seguro) ================= */
+
 
 .politicas {
     list-style: none;

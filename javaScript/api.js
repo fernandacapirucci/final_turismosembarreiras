@@ -1,17 +1,7 @@
-/* ==================================================
-   CONFIGURAÇÃO DA API (um lugar só para trocar a URL)
-   Depois do deploy, troque pela URL pública do backend.
-================================================== */
-
 const API_URL = 'http://localhost:8080';
 
 const GOOGLE_CLIENT_ID =
     '72671285332-knhpone20v8jbflb5fnfjnnp0efcmfun.apps.googleusercontent.com';
-
-
-/* ==================================================
-   SESSÃO (token JWT + dados do usuário)
-================================================== */
 
 function salvarSessao(dados) {
     localStorage.setItem('token', dados.token);
@@ -36,13 +26,6 @@ function sair() {
     window.location.href = 'Login.html';
 }
 
-
-/* ==================================================
-   CHAMADAS AO BACKEND
-   - envia o token automaticamente (Authorization: Bearer ...)
-   - lança Error com a mensagem do backend quando dá erro
-   - se vier 401 numa rota protegida, volta para o login
-================================================== */
 
 async function api(caminho, opcoes = {}) {
     const headers = { 'Content-Type': 'application/json', ...(opcoes.headers || {}) };
@@ -71,11 +54,6 @@ async function api(caminho, opcoes = {}) {
     }
     return dados;
 }
-
-
-/* ==================================================
-   UTILITÁRIOS DE TELA
-================================================== */
 
 function mostrarErro(texto) {
     const el = document.getElementById('mensagem-erro');

@@ -1,10 +1,4 @@
-/* ==================================================
-   CONFIGURAÇÕES GERAIS
-================================================== */
-
 :root {
-    /* Tamanho padrão de TODOS os campos e botões do login
-       (igual ao botão "Continuar com o Google") */
     --largura-campo: 300px;
     --altura-campo: 40px;
     --raio-campo: 30px;
@@ -47,9 +41,6 @@ a {
 }
 
 
-/* ==================================================
-   INPUTS (todos com o mesmo tamanho)
-================================================== */
 
 input {
     display: block;
@@ -62,14 +53,12 @@ input {
 
     border: 1px solid #666;
     border-radius: var(--raio-input);
-    outline: none; /* evita o contorno azul padrão do navegador */
+    outline: none; 
 
     font-family: 'Inter', sans-serif;
     font-size: 14px;
 }
 
-/* Hover e focus: engrossa a borda com box-shadow
-   (assim o input NÃO muda de tamanho) */
 input:hover,
 input:focus,
 input.active {
@@ -77,10 +66,6 @@ input.active {
     box-shadow: 0 0 0 1px #095169;
 }
 
-
-/* ==================================================
-   BARRA SUPERIOR
-================================================== */
 
 .top-bar {
     min-height: 42px;
@@ -145,9 +130,6 @@ input.active {
 }
 
 
-/* ==================================================
-   CABEÇALHO
-================================================== */
 
 .header {
     background: white;
@@ -234,9 +216,6 @@ input.active {
 }
 
 
-/* ==================================================
-   MENU
-================================================== */
 
 .menu-container {
     background: white;
@@ -303,14 +282,11 @@ input.active {
 }
 
 
-/* ==================================================
-   LOGIN - CAIXA PRINCIPAL
-================================================== */
 
 .user {
     width: 100%;
     max-width: 400px;
-    margin: 30px auto; /* centraliza horizontalmente + respiro em cima/baixo */
+    margin: 30px auto; 
     padding: 30px 25px;
 
     display: flex;
@@ -326,10 +302,6 @@ input.active {
     inset: 0;
 }
 
-/* Coluna ÚNICA de 300px, centralizada na caixa.
-   Tudo que está dentro (abas, títulos, inputs, botões, divisor,
-   botão Google) ocupa 100% dessa coluna, então começa e termina
-   exatamente na mesma reta. */
 .user-data {
     display: flex;
     flex-direction: column;
@@ -350,10 +322,6 @@ input.active {
 }
 
 
-/* ==================================================
-   CAMPO DE SENHA + BOTÃO MOSTRAR SENHA
-================================================== */
-
 .campo-senha {
     position: relative;
     width: 100%;
@@ -365,7 +333,7 @@ input.active {
     width: 100%;
     max-width: 100%;
     margin: 0;
-    padding: 0 45px 0 12px; /* espaço para o olho não ficar sobre o texto */
+    padding: 0 45px 0 12px; 
 }
 
 .campo-senha button,
@@ -403,10 +371,6 @@ input[type="password"]::-ms-clear {
 }
 
 
-/* ==================================================
-   ABAS (Entrar / Cadastrar)
-================================================== */
-
 .tabs {
     display: flex;
     width: 100%;
@@ -436,10 +400,6 @@ input[type="password"]::-ms-clear {
 }
 
 
-/* ==================================================
-   BOTÃO ENTRAR
-================================================== */
-
 .but-entrar {
     width: 100%;
     max-width: var(--largura-campo);
@@ -467,10 +427,6 @@ input[type="password"]::-ms-clear {
     cursor: pointer;
 }
 
-
-/* ==================================================
-   BOTÃO CONTINUAR COM GOOGLE
-================================================== */
 
 .but-google {
     width: 100%;
@@ -521,10 +477,6 @@ input[type="password"]::-ms-clear {
 }
 
 
-/* ==================================================
-   DIVISOR "ou"
-================================================== */
-
 .divider {
     display: flex;
     align-items: center;
@@ -547,10 +499,6 @@ input[type="password"]::-ms-clear {
     margin-top: 0;
 }
 
-
-/* ==================================================
-   CADASTRO - ESCOLHA DO TIPO DE CONTA
-================================================== */
 
 .tipos-conta {
     display: grid;
@@ -618,7 +566,7 @@ input[type="password"]::-ms-clear {
     color: #666;
 }
 
-/* Tipo selecionado */
+
 .tipo-conta.active {
     border-color: #008f92;
     background: #f8f8f8;
@@ -629,7 +577,7 @@ input[type="password"]::-ms-clear {
     color: #fff;
 }
 
-/* Rótulo dos campos (Nome / E-mail / Senha) */
+
 .rotulo {
     display: block;
     margin-top: 5px;
@@ -637,7 +585,7 @@ input[type="password"]::-ms-clear {
     font-weight: 700;
 }
 
-/* Textinho que aparece só para agências */
+
 .nota-agencia {
     margin-top: 0;
     padding: 0 6px 5px;
@@ -650,10 +598,6 @@ input[type="password"]::-ms-clear {
     display: none;
 }
 
-
-/* ==================================================
-   RESPONSIVO
-================================================== */
 
 @media (max-width: 600px) {
 
@@ -681,26 +625,4 @@ input[type="password"]::-ms-clear {
         grid-template-columns: 1fr;
     }
 
-}
-
-/* ==================================================
-   MENSAGEM DE ERRO + BOTÃO GOOGLE (renderizado pelo Google)
-================================================== */
-
-.mensagem-erro {
-    margin: 0 0 6px;
-    padding: 8px 10px;
-    border-radius: 8px;
-    background: #fdecea;
-    color: #b3261e;
-    font-size: 12px;
-}
-
-.mensagem-erro[hidden] {
-    display: none;
-}
-
-#googleButton {
-    display: flex;
-    justify-content: center;
 }

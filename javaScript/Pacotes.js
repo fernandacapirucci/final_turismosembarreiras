@@ -1,13 +1,4 @@
-/*
-====================================================
-TURISMO SEM BARREIRAS
-JavaScript da página de Pacotes
-====================================================
-*/
-
 document.addEventListener("DOMContentLoaded", function () {
-
-    /* ================= ELEMENTOS ================= */
 
     const cards = Array.from(document.querySelectorAll(".pacote-card"));
     const grid = document.querySelector(".pacotes-grid");
@@ -16,9 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const ordenacao = document.querySelector(".ordenacao select");
     const contador = document.querySelector(".titulo-pagina p");
 
-    /* ================= ACESSIBILIDADE INICIAL ================= */
-
-    // Leitor de tela anuncia a mudança do contador
     if (contador) {
         contador.setAttribute("role", "status");
         contador.setAttribute("aria-live", "polite");
@@ -35,14 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
             botao.setAttribute("aria-label", "Ver detalhes: " + titulo);
         }
 
-        // Nota lida como "Avaliação 4.9 de 5"
         const nota = card.querySelector(".titulo-avaliacao span");
         if (nota) {
             const valor = nota.textContent.replace(/[^\d.]/g, "");
             nota.setAttribute("aria-label", "Avaliação " + valor + " de 5");
         }
 
-        // Emojis das tags não são lidos em voz alta
         card.querySelectorAll(".tags span").forEach(function (tag) {
             const texto = tag.textContent.trim();
             const espaco = texto.indexOf(" ");
@@ -57,14 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    /* ================= GUARDAR ORDEM ORIGINAL ================= */
-
     cards.forEach(function (card, index) {
         card.dataset.indice = index;
         card.dataset.ordemOriginal = index;
     });
-
-    /* ================= PESQUISA DA HOME ================= */
 
     let pesquisaHome = null;
 
@@ -81,8 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
         sessionStorage.removeItem("pesquisaTurismo");
     }
 
-    /* ================= NORMALIZAR TEXTO ================= */
-
     function normalizar(texto) {
 
         if (!texto) {
@@ -97,8 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .trim();
 
     }
-
-    /* ================= CONVERTER DEFICIÊNCIA ================= */
 
     function converterDeficiencia(texto) {
 
@@ -129,8 +107,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    /* ================= DADOS DOS PACOTES (lidos do HTML) ================= */
-
     const regioesPorEstado = {
         PR: "Sul", RS: "Sul", SC: "Sul",
         SP: "Sudeste", RJ: "Sudeste", MG: "Sudeste", ES: "Sudeste",
@@ -156,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
             card.querySelectorAll(".preco strong")[1].textContent.replace(/\D/g, "")
         );
 
-        // A duração vem do atributo data-duracao do card (ex.: data-duracao="4")
         const duracao = parseInt(card.dataset.duracao);
 
         const avaliacao = parseFloat(
@@ -165,13 +140,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const tags = normalizar(card.querySelector(".tags").textContent);
 
-        // Lê do atributo data-deficiencias (aceita maiúsculas e minúsculas)
         const deficiencias = (card.dataset.deficiencias || "")
             .split(",")
             .map(converterDeficiencia)
             .filter(Boolean);
 
-        // Atualiza o texto "Atende:" do card com a lista real
         const atendimento = card.querySelector(".atendimento");
 
         if (atendimento) {
@@ -181,8 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     return nomesDeficiencia[d];
                 }).join(", ");
         }
-
-        // Mantém o texto "X DIAS PRÓX. SAÍDA" do card igual à duração real
         const rotuloDuracao = card.querySelector(".preco small");
 
         if (rotuloDuracao && !isNaN(duracao)) {
@@ -201,9 +172,6 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
     });
-
-    /* ================= ENCONTRAR DESTINO ================= */
-
     function destinoCombina(card, destino) {
 
         if (!destino) {
@@ -212,7 +180,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const busca = normalizar(destino);
 
-        // Procura só no título e no local (não na descrição)
         const textoCard = normalizar(
             card.querySelector("h3").textContent + " " +
             card.querySelector(".local").textContent
@@ -222,7 +189,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return true;
         }
 
-        // Nomes que podem estar escritos de outro jeito no card
         const equivalencias = {
             "foz do iguacu": "foz de iguacu",
             "gramado": "gramado",
@@ -238,8 +204,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    /* ================= MOSTRAR PESQUISA DA HOME ================= */
-
     function mostrarPesquisaHome() {
 
         if (!pesquisaHome) {
@@ -248,7 +212,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const destino = pesquisaHome.destino || "";
 
-        // "Qualquer necessidade" não conta como necessidade
         const necessidade = converterDeficiencia(pesquisaHome.necessidade)
             ? pesquisaHome.necessidade
             : "";
@@ -287,8 +250,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    /* ================= FILTRO PRINCIPAL ================= */
-
     function aplicarFiltros() {
 
         const regiaoSelecionada = filtros[0] ? filtros[0].value : "Todas";
@@ -302,7 +263,6 @@ document.addEventListener("DOMContentLoaded", function () {
             precoMaximo = parseInt(precoSelecionado.replace(/\D/g, ""));
         }
 
-        // "Até 3 dias" -> 3 (usa <=) | "4 dias" -> 4 (igual) | "5 dias" -> 5 (igual)
         const ateTresDias = duracaoSelecionada === "Até 3 dias";
         let duracaoExata = null;
 
@@ -324,7 +284,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let mostrar = true;
 
-            /* REGIÃO */
             if (
                 regiaoSelecionada !== "Todas" &&
                 dados.regiao !== regiaoSelecionada
@@ -332,7 +291,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 mostrar = false;
             }
 
-            /* DEFICIÊNCIA DO FILTRO */
             if (mostrar && deficienciaSelecionada !== "Qualquer") {
                 const deficiencia = converterDeficiencia(deficienciaSelecionada);
                 if (!dados.deficiencias.includes(deficiencia)) {
@@ -340,26 +298,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             }
 
-            /* DEFICIÊNCIA VINDA DA HOME */
             if (mostrar && necessidadeHome) {
                 if (!dados.deficiencias.includes(necessidadeHome)) {
                     mostrar = false;
                 }
             }
 
-            /* DESTINO VINDO DA HOME */
             if (mostrar && destinoHome) {
                 if (!destinoCombina(card, destinoHome)) {
                     mostrar = false;
                 }
             }
 
-            /* PREÇO */
             if (mostrar && dados.preco > precoMaximo) {
                 mostrar = false;
             }
 
-            /* DURAÇÃO */
             if (mostrar && ateTresDias && dados.duracao > 3) {
                 mostrar = false;
             }
@@ -368,7 +322,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 mostrar = false;
             }
 
-            /* ACESSIBILIDADE */
             if (mostrar && checkboxes[0] && checkboxes[0].checked && !dados.transporte) {
                 mostrar = false;
             }
@@ -381,7 +334,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 mostrar = false;
             }
 
-            /* MOSTRAR OU ESCONDER (hidden esconde também de leitores de tela e do teclado) */
             card.hidden = !mostrar;
 
             if (mostrar) {
@@ -395,9 +347,6 @@ document.addEventListener("DOMContentLoaded", function () {
         verificarNenhumResultado(quantidade);
 
     }
-
-    /* ================= ORDENAÇÃO ================= */
-
     function ordenarPacotes() {
 
         if (!grid || !ordenacao) {
@@ -438,8 +387,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    /* ================= CONTADOR ================= */
-
     function atualizarContador(quantidade) {
 
         if (!contador) {
@@ -458,7 +405,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    /* ================= NENHUM RESULTADO ================= */
 
     function verificarNenhumResultado(quantidade) {
 
@@ -471,7 +417,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 mensagem = document.createElement("div");
                 mensagem.className = "sem-resultados";
 
-                // Sem role="status": o contador já anuncia "Nenhum pacote encontrado"
                 mensagem.innerHTML = `
                     <strong>Nenhum pacote encontrado</strong>
                     <p>Tente mudar os filtros ou pesquisar outro destino.</p>
@@ -494,7 +439,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    /* ================= LIMPAR FILTROS ================= */
 
     function limparFiltros() {
 
@@ -517,14 +461,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         aplicarFiltros();
 
-        // Devolve o foco ao primeiro filtro (o botão clicado pode ter sido removido)
         if (filtros[0]) {
             filtros[0].focus();
         }
 
     }
-
-    /* ================= BOTÃO LIMPAR FILTROS ================= */
 
     const tituloFiltros = document.querySelector(".filtros h3");
 
@@ -536,14 +477,12 @@ document.addEventListener("DOMContentLoaded", function () {
         botaoLimpar.type = "button";
         botaoLimpar.className = "limpar-filtros";
 
-        // Fora do <h3>, para não virar parte do título
+
         tituloFiltros.insertAdjacentElement("afterend", botaoLimpar);
 
         botaoLimpar.addEventListener("click", limparFiltros);
 
     }
-
-    /* ================= ESTILOS DOS ELEMENTOS CRIADOS PELO JS ================= */
 
     const estilo = document.createElement("style");
 
@@ -636,7 +575,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.head.appendChild(estilo);
 
-    /* ================= EVENTOS ================= */
 
     filtros.forEach(function (select) {
         select.addEventListener("change", aplicarFiltros);
@@ -650,7 +588,6 @@ document.addEventListener("DOMContentLoaded", function () {
         ordenacao.addEventListener("change", aplicarFiltros);
     }
 
-    /* ================= INICIALIZAÇÃO ================= */
 
     mostrarPesquisaHome();
     aplicarFiltros();

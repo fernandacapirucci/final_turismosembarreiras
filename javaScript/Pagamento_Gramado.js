@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
 
     const PRECO_POR_PESSOA = 2290;
@@ -18,8 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const opcoesPagamento = document.querySelectorAll(
         'input[name="metodo"]'
     );
-
-    // RECEBER A DATA ESCOLHIDA NO DESTINO
 
     const parametrosURL = new URLSearchParams(
         window.location.search
@@ -41,8 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // FORMATAR PREÇO EM REAIS
-
     function formatarPreco(valor) {
 
         return valor.toLocaleString("pt-BR", {
@@ -51,8 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     }
-
-    // ATUALIZAR RESUMO DA VIAGEM
 
     function atualizarResumo() {
 
@@ -70,8 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
         resumoTotal.textContent = formatarPreco(valorTotal);
 
     }
-
-    // ATUALIZAR INFORMAÇÕES DO PAGAMENTO
 
     function atualizarFormaPagamento() {
 
@@ -108,8 +99,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // ENVIAR FORMULÁRIO
-
     formulario.addEventListener("submit", function (evento) {
 
         evento.preventDefault();
@@ -128,9 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
         mensagemResultado.focus();
 
     });
-
-    // EVENTOS
-
     campoViajantes.addEventListener(
         "change",
         atualizarResumo

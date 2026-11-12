@@ -12,7 +12,7 @@
 
 <body>
 
-<!-- Barra superior -->
+
 <div class="top-bar">
     <div class="top-container">
 
@@ -29,7 +29,6 @@
     </div>
     </div>
 
-<!-- Cabeçalho -->
 <header class="header">
     <div class="header-container">
 
@@ -51,7 +50,7 @@
 
 </header>
 
-<!-- Menu -->
+
     <div class="menu-container">
         <nav id="menu">
 
@@ -108,23 +107,21 @@
 
         <div>
             <h3>E-mail</h3>
-            <input type="email" id="email" placeholder="Digite o seu e-mail" autocomplete="email">
+            <input type="email" placeholder="Digite o seu e-mail">
         </div>
 
         <div>
             <h3>Senha</h3>
             <div class="campo-senha">
-                <input type="password" id="senha" placeholder="Digite a sua senha" autocomplete="current-password">
-                <button type="button" id="toggle-senha" aria-label=" Mostrar senha, botão">
+                <input type="password" id="senha" placeholder="Digite a sua senha">
+                <button type="button" id="toggle-senha" aria-label=" Mostrar senha, botão"> <!--Com o aria-label="Mostrar senha", o leitor de tela anuncia algo como “Mostrar senha, botão”, e a pessoa entende a função.-->
                     <img src="assets/olho-fechado.png" id="icone-olho">
                 </button>
             </div>
         </div>
 
-        <p class="mensagem-erro" id="mensagem-erro" role="alert" hidden></p>
-
         <div class="but-entrar">
-        <button type="button" id="btn-entrar">Entrar</button>
+        <button onclick="window.location.href='Home.html'">Entrar</button>
         </div>
 
         <div class="divider">
@@ -133,10 +130,12 @@
             <span></span>
         </div>
 
-        <div class="but-google">
-            <!-- O botão do Google é desenhado aqui pelo Login.js -->
-            <div id="googleButton"></div>
-        </div>
+        <div class="but-google">  
+            <button href="#">
+                <img src="assets/Google.png">
+                Continuar com o Google
+            </button>
+        </div> 
 
     </div>
 
@@ -146,11 +145,8 @@
 <section class="principal">
 
 </section>
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-<script src="javaScript/api.js"></script>
 <script src="javaScript/Login.js"></script>
 <script src="javaScript/vlibras.js"></script>
 <script src="javaScript/acessibilidade.js"></script>
-<script src="javaScript/sessao.js"></script>
 </body>
 </html>

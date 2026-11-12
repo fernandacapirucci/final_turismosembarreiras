@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ==============================
-       ANIMAÇÃO DOS CARDS
-    ============================== */
-
     const elementos = document.querySelectorAll(".selo, .beneficio");
 
     const prefereMenosMovimento =
@@ -42,11 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-
-    /* ==============================
-       LINK "VER PACOTES"
-    ============================== */
-
     const botoesPacotes =
         document.querySelectorAll(".link-etapa, .btn-pacotes");
 
@@ -63,11 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
-    /* ==============================
-       ACESSIBILIDADE DO TECLADO
-    ============================== */
-
     const links = document.querySelectorAll("a");
 
     links.forEach(function (link) {
@@ -81,11 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     });
-
-
-    /* ==============================
-       ANIMAÇÃO SUAVE PARA ÂNCORAS
-    ============================== */
 
     document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 

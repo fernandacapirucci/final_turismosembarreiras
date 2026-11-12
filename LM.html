@@ -16,7 +16,7 @@
 
 <body>
 
-    <!-- Ícones SVG -->
+
     <svg width="0" height="0" style="position:absolute" aria-hidden="true">
         <defs>
             <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
@@ -50,7 +50,7 @@
         </defs>
     </svg>
 
-    <!-- Barra superior -->
+
 <div class="top-bar">
     <div class="top-container">
 
@@ -67,7 +67,7 @@
     </div>
     </div>
 
-    <!-- Cabeçalho -->
+
     <header class="header">
         <div class="header-container">
 
@@ -89,7 +89,7 @@
 
     </header>
 
-    <!-- Menu -->
+
     <div class="menu-container">
         <nav id="menu">
 
@@ -131,7 +131,6 @@
 
     <main class="pagina">
 
-        <!-- Topo do destino: galeria + reserva -->
         <section class="destino-topo">
 
             <div class="destino-info">
@@ -193,7 +192,7 @@
                 </div>
             </div>
 
-            <!-- Caixa de reserva -->
+            
             <aside class="reserva" aria-label="Reserva">
 
                 <p class="reserva-de">A partir de</p>
@@ -205,7 +204,7 @@
                     Em até 12x no cartão
                 </p>
 
-                <!-- DATAS COM VALORES DEFINIDOS -->
+
                 <fieldset class="datas">
                     <legend>Escolha a sua data</legend>
 
@@ -256,7 +255,7 @@
                     </label>
                 </fieldset>
 
-                <!-- BOTÃO DE RESERVA -->
+       
                 <a href="Pagamento_LM.html" class="btn-reservar">
                     Reservar viagem
                     <svg class="ic"><use href="#i-arrow"/></svg>
@@ -271,7 +270,7 @@
 
         </section>
 
-        <!-- Nível de acessibilidade -->
+
         <section class="nivel" id="acessibilidade" aria-labelledby="titulo-nivel">
 
             <div class="nivel-intro">
@@ -312,7 +311,7 @@
 
         </section>
 
-        <!-- Fotos do passeio -->
+
         <section class="fotos" aria-labelledby="titulo-fotos">
 
             <div class="fotos-topo">
@@ -387,7 +386,7 @@
             </div>
         </section>
 
-        <!-- Guia completo -->
+
         <section class="guia" aria-labelledby="titulo-guia">
 
             <span class="guia-icone"><svg class="ic"><use href="#i-doc"/></svg></span>
@@ -436,7 +435,7 @@
 
         </div>
 
-        <!-- Roteiro dia a dia -->
+
         <section class="roteiro" aria-labelledby="titulo-roteiro">
 
             <h3 class="titulo-secao" id="titulo-roteiro">
@@ -491,7 +490,7 @@
 
         </section>
 
-        <!-- Incluso / Não incluso -->
+
         <section class="inclusos">
 
             <div class="incluso">
@@ -520,11 +519,6 @@
             </div>
 
         </section>
-
-        <!-- Cole este bloco logo abaixo da seção "O que está incluso / não incluso" -->
-<!-- e antes do botão final "Reservar viagem". -->
-<!-- No <head>: <link rel="stylesheet" href="avaliacoes.css"> -->
-<!-- Antes de </body>: <script src="avaliacoes.js" defer></script> -->
 
 <section class="av" id="avaliacoes" aria-labelledby="av-titulo"
          data-destino="lm" data-nota="4.8" data-total="88">
@@ -601,7 +595,7 @@
             <span class="av__tag">Baixa visão</span>
           </div>
         </article>
-        <!-- as avaliações novas entram aqui pelo avaliacoes.js -->
+  
       </div>
 
       <button type="button" class="av__btn av__btn--escrever" id="av-abrir-form" aria-expanded="false" aria-controls="av-form">
@@ -676,7 +670,7 @@
   </div>
 </section>
 
-        <!-- BOTÃO FINAL -->
+     
         <div class="reserva-final">
             <a href="Pagamento_LM.html"
                class="btn-reservar btn-reservar-final">
@@ -694,7 +688,7 @@
         <img src="assets/balão.png" alt="">
 
     </button>
-    <!-- Rodapé -->
+
     <footer class="rodape">
         <p class="slogan">Mais que viagens,<br>conexões sem barreiras.</p>
         <svg class="onda" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
@@ -783,7 +777,7 @@
     </article>
 </dialog>
 
-<!-- JANELA DO ÁUDIO -->
+
 <dialog id="modal-audio" aria-labelledby="titulo-audio">
     <button id="fechar-audio" type="button" aria-label="Fechar">✕</button>
     <h2 id="titulo-audio">Ouvir o guia em áudio</h2>
@@ -794,7 +788,7 @@
     <p id="erro-audio" hidden>Não foi possível carregar o áudio.</p>
 </dialog>
 
-    <!-- ENVIA A DATA SELECIONADA PARA PAGAMENTO_LM.HTML -->
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 

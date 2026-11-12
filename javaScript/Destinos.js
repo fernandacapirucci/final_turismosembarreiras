@@ -1,4 +1,3 @@
-// Galeria: troca a foto principal ao clicar nas miniaturas ou nas setas
 const fotoPrincipal = document.getElementById("foto-principal");
 const miniaturas = document.querySelectorAll(".mini");
 const fotos = [fotoPrincipal.getAttribute("src")];
@@ -29,7 +28,7 @@ miniaturas.forEach((mini, i) => {
 document.getElementById("foto-anterior").addEventListener("click", () => mostrarFoto(atual - 1));
 document.getElementById("foto-proxima").addEventListener("click", () => mostrarFoto(atual + 1));
 
-// Filtros das fotos do passeio
+
 const filtros = document.querySelectorAll(".filtro");
 const cards = document.querySelectorAll(".foto-card");
 
@@ -46,7 +45,7 @@ filtros.forEach((botao) => {
     });
 });
 
-// Janelas (modais): Ouvir em áudio, Vídeo em Libras e Leitura fácil
+
 function ligarModal(idBotao, idModal, idFechar, aoFechar, aoAbrir) {
     const botao = document.getElementById(idBotao);
     const janela = document.getElementById(idModal);
@@ -74,7 +73,7 @@ function ligarModal(idBotao, idModal, idFechar, aoFechar, aoAbrir) {
     if (aoFechar) janela.addEventListener("close", aoFechar);
 }
 
-// Áudio: toca ao abrir e pausa/volta ao início ao fechar
+
 const playerAudio = document.getElementById("player-audio");
 
 ligarModal(
@@ -92,7 +91,7 @@ ligarModal(
     }
 );
 
-// Vídeo em Libras
+
 const videoLibras = document.getElementById("video-libras");
 
 ligarModal("btn-libras", "modal-libras", "fechar-libras", () => {
@@ -102,7 +101,7 @@ ligarModal("btn-libras", "modal-libras", "fechar-libras", () => {
     }
 });
 
-// Leitura fácil
+
 ligarModal("btn-leitura", "modal-leitura", "fechar-leitura");
 
 // Mostra um aviso se o arquivo de áudio não for encontrado

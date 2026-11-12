@@ -1,9 +1,3 @@
-
-
-/* ==================================================
-   CONFIGURAÇÕES GERAIS
-================================================== */
-
 * {
     margin: 0;
     padding: 0;
@@ -45,9 +39,7 @@ button:focus-visible {
 }
 
 
-/* ==================================================
-   BARRA SUPERIOR
-================================================== */
+
 
 .top-bar {
     min-height: 42px;
@@ -112,9 +104,7 @@ button:focus-visible {
 }
 
 
-/* ==================================================
-   CABEÇALHO
-================================================== */
+
 
 .header {
     background: white;
@@ -208,9 +198,7 @@ button:focus-visible {
 }
 
 
-/* ==================================================
-   MENU
-================================================== */
+
 
 .menu-container {
     background: white;
@@ -277,9 +265,7 @@ button:focus-visible {
 }
 
 
-/* ==============================
-   INTRODUÇÃO
-================================ */
+
 
 .intro-section {
     background: #f7fbfa;
@@ -320,9 +306,7 @@ button:focus-visible {
 }
 
 
-/* ==============================
-   ETAPAS
-================================ */
+
 
 .etapas-section {
     width: 94%;
@@ -347,7 +331,7 @@ button:focus-visible {
 }
 
 
-/* Cards */
+
 
 .selo {
     border: 2px solid #ddd;
@@ -426,9 +410,7 @@ button:focus-visible {
 }
 
 
-/* ==============================
-   BENEFÍCIOS
-================================ */
+
 
 .beneficios-section {
     width: 94%;
@@ -486,9 +468,7 @@ button:focus-visible {
 }
 
 
-/* ==============================
-   CTA
-================================ */
+
 
 .cta-section {
     background: #0c0636;
@@ -545,7 +525,7 @@ button:focus-visible {
 }
 
 
-/* ================= Botão flutuante ================= */
+
 
 .but-touch {
     position: fixed;
@@ -586,7 +566,7 @@ button:focus-visible {
 }
 
 
-/* Rodapé */
+
 
 footer {
     background: #0c0636;
@@ -651,9 +631,7 @@ footer {
     text-decoration: underline;
 }
 
-/* ==============================
-   ACESSIBILIDADE
-================================ */
+
 
 a:focus-visible,
 button:focus-visible {
@@ -662,9 +640,7 @@ button:focus-visible {
 }
 
 
-/* ==============================
-   ANIMAÇÃO
-================================ */
+
 
 .selo,
 .beneficio {
@@ -683,9 +659,7 @@ button:focus-visible {
 }
 
 
-/* ==============================
-   RESPONSIVIDADE
-================================ */
+
 
 @media (max-width: 900px) {
 
@@ -813,7 +787,7 @@ button:focus-visible {
 }
 
 
-/* Usuário prefere menos movimento */
+
 @media (prefers-reduced-motion: reduce) {
 
     html {

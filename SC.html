@@ -16,7 +16,7 @@
 
 <body>
 
-    <!-- Ícones SVG -->
+    
     <svg width="0" height="0" style="position:absolute" aria-hidden="true">
         <defs>
             <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
@@ -50,7 +50,6 @@
         </defs>
     </svg>
 
-   <!-- Barra superior -->
     <div class="top-bar">
     <div class="top-container">
 
@@ -67,7 +66,7 @@
     </div>
     </div>
 
-    <!-- Cabeçalho -->
+
     <header class="header">
         <div class="header-container">
 
@@ -89,7 +88,7 @@
 
     </header>
 
-    <!-- Menu -->
+
     <div class="menu-container">
         <nav id="menu">
 
@@ -131,7 +130,7 @@
 
     <main class="pagina">
 
-        <!-- TOPO DO DESTINO -->
+   
         <section class="destino-topo">
             <div class="destino-info">
 
@@ -198,7 +197,7 @@
                 </div>
             </div>
 
-            <!-- CAIXA DE RESERVA -->
+   
             <aside class="reserva" aria-label="Reserva">
                 <p class="reserva-de">A partir de</p>
                 <p class="reserva-preco">R$ 1.690,00</p>
@@ -249,7 +248,7 @@
                     </label>
                 </fieldset>
 
-                <!-- BOTÃO ATUALIZADO -->
+         
                 <a href="Pagamento_SC.html"
                    class="btn-reservar"
                    data-reservar-sc>
@@ -265,7 +264,7 @@
             </aside>
         </section>
 
-        <!-- NÍVEL DE ACESSIBILIDADE -->
+  
         <section class="nivel" id="acessibilidade"
                  aria-labelledby="titulo-nivel">
 
@@ -308,7 +307,7 @@
             </div>
         </section>
 
-        <!-- FOTOS DO PASSEIO -->
+   
         <section class="fotos" aria-labelledby="titulo-fotos">
             <div class="fotos-topo">
                 <h3 class="titulo-secao" id="titulo-fotos">
@@ -385,7 +384,7 @@
             </div>
         </section>
 
-        <!-- GUIA COMPLETO -->
+     
         <section class="guia" aria-labelledby="titulo-guia">
             <span class="guia-icone">
                 <svg class="ic"><use href="#i-doc"/></svg>
@@ -434,7 +433,6 @@
             </a>
         </div>
 
-        <!-- ROTEIRO -->
         <section class="roteiro" aria-labelledby="titulo-roteiro">
             <h3 class="titulo-secao" id="titulo-roteiro">
                 <svg class="ic"><use href="#i-calendar"/></svg>
@@ -487,7 +485,7 @@
             </details>
         </section>
 
-        <!-- INCLUSOS -->
+     
         <section class="inclusos">
             <div class="incluso">
                 <h3>
@@ -514,11 +512,6 @@
                 </ul>
             </div>
         </section>
-
-        <!-- Cole este bloco logo abaixo da seção "O que está incluso / não incluso" -->
-<!-- e antes do botão final "Reservar viagem". -->
-<!-- No <head>: <link rel="stylesheet" href="avaliacoes.css"> -->
-<!-- Antes de </body>: <script src="avaliacoes.js" defer></script> -->
 
 <section class="av" id="avaliacoes" aria-labelledby="av-titulo"
          data-destino="salvador" data-nota="4.8" data-total="90">
@@ -592,7 +585,7 @@
             <span class="av__tag">Acompanhante</span>
           </div>
         </article>
-        <!-- as avaliações novas entram aqui pelo avaliacoes.js -->
+      
       </div>
 
       <button type="button" class="av__btn av__btn--escrever" id="av-abrir-form" aria-expanded="false" aria-controls="av-form">
@@ -667,7 +660,7 @@
   </div>
 </section>
 
-        <!-- SEGUNDO BOTÃO ATUALIZADO -->
+  
         <div class="reserva-final">
             <a href="Pagamento_SC.html"
                class="btn-reservar btn-reservar-final"
@@ -686,7 +679,7 @@
         <img src="assets/balão.png" alt="">
 
     </button>
-    <!-- RODAPÉ -->
+
     <footer class="rodape">
         <p class="slogan">Mais que viagens,<br>conexões sem barreiras.</p>
         <svg class="onda" viewBox="0 0 1440 120"
@@ -776,7 +769,7 @@
     </article>
 </dialog>
 
-    <!-- JANELA DO ÁUDIO -->
+
     <dialog id="modal-audio" aria-labelledby="titulo-audio">
         <button id="fechar-audio" type="button" aria-label="Fechar">✕</button>
         <h2 id="titulo-audio">Ouvir o guia em áudio</h2>
@@ -789,7 +782,7 @@
 
     <script src="javaScript/Destinos.js"></script>
 
-    <!-- ENVIA A DATA ESCOLHIDA PARA O PAGAMENTO -->
+  
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const botoesReserva = document.querySelectorAll("[data-reservar-sc]");

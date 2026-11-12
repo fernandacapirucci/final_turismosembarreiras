@@ -1,16 +1,4 @@
-/*
-====================================================
-TURISMO SEM BARREIRAS
-JavaScript - Sobre Nós
-====================================================
-*/
-
 document.addEventListener("DOMContentLoaded", function () {
-
-
-    /* ==================================================
-       ANIMAÇÃO DOS CARDS
-    ================================================== */
 
     const elementos =
         document.querySelectorAll(
@@ -75,11 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    /* ==================================================
-       MENU
-    ================================================== */
-
     const linksMenu =
         document.querySelectorAll(
             "#menu a"
@@ -106,11 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
     );
-
-
-    /* ==================================================
-       ROLAGEM SUAVE
-    ================================================== */
 
     const linksInternos =
         document.querySelectorAll(
@@ -164,11 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
-
-    /* ==================================================
-       BOTÃO DE PACOTES
-    ================================================== */
-
     const botaoPacotes =
         document.querySelector(
             ".botao-pacotes"
@@ -180,12 +153,6 @@ document.addEventListener("DOMContentLoaded", function () {
         botaoPacotes.addEventListener(
             "click",
             function () {
-
-                /*
-                Limpa uma pesquisa antiga
-                para abrir todos os pacotes.
-                */
-
                 sessionStorage.removeItem(
                     "pesquisaTurismo"
                 );
@@ -194,11 +161,6 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
     }
-
-
-    /* ==================================================
-       ACESSIBILIDADE DO TECLADO
-    ================================================== */
 
     const botoes =
         document.querySelectorAll(
@@ -227,11 +189,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     );
 
-
-    /* ==================================================
-       REDUÇÃO DE MOVIMENTO
-    ================================================== */
-
     const prefereMenosMovimento =
         window.matchMedia(
             "(prefers-reduced-motion: reduce)"
@@ -246,11 +203,6 @@ document.addEventListener("DOMContentLoaded", function () {
             "auto";
 
     }
-
-
-    /* ==================================================
-       LOG
-    ================================================== */
 
     console.log(
         "Sobre_nos.js carregado com sucesso!"

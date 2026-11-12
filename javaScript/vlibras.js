@@ -1,11 +1,9 @@
 (function () {
 
-    // evita carregar duas vezes
     if (document.querySelector("[vw]")) {
         return;
     }
 
-    // cria a estrutura que o VLibras exige
     const widget = document.createElement("div");
 
     widget.setAttribute("vw", "");
@@ -20,7 +18,6 @@
 
     document.body.appendChild(widget);
 
-    // carrega o plugin oficial e inicia
     const script = document.createElement("script");
 
     script.src = "https://vlibras.gov.br/app/vlibras-plugin.js";

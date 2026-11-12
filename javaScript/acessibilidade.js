@@ -18,8 +18,6 @@
 
     function iniciar() {
 
-        /* ---------- Link "Pular para o conteúdo principal" ---------- */
-
         var alvo = document.querySelector("main, section");
 
         if (alvo) {
@@ -38,8 +36,6 @@
             document.body.insertBefore(pular, document.body.firstChild);
         }
 
-        /* ---------- Botão de acessibilidade ---------- */
-
         var botao = document.createElement("button");
 
         botao.type = "button";
@@ -53,8 +49,6 @@
             '</svg>';
 
         document.body.appendChild(botao);
-
-        /* ---------- Aviso de ajuda ---------- */
 
         var aviso = document.createElement("div");
 
@@ -78,8 +72,6 @@
                 aviso.hidden = true;
             }, 7000);
         }
-
-        /* ---------- Liga e desliga o modo ---------- */
 
         function aplicar(ativo, comAviso) {
 
@@ -114,9 +106,6 @@
             aplicar(ativo, true);
             gravarEstado(ativo);
         });
-
-        /* ---------- Espaço também ativa links que funcionam como botão ---------- */
-
         document.addEventListener("keydown", function (evento) {
 
             if (
